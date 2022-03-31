@@ -6,6 +6,9 @@ class Fixed {
 public:
 	Fixed();
 	~Fixed();
+	Fixed(int cost n);
+	Fixed(Fixed const &number);
+	
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 
