@@ -1,6 +1,6 @@
-NAME	=	harl_2.0
+NAME	=	ex00
 
-SRCS	=	Harl.cpp main.cpp
+SRCS	=	Fixed.cpp main.cpp
 
 OBJS	=	${SRCS:.c=.o}
 
