@@ -1,6 +1,7 @@
-NAME	=	ex00
+NAME	=	ex01
 
 SRCS	=	Fixed.cpp main.cpp
+
 
 OBJS	=	${SRCS:.c=.o}
 
