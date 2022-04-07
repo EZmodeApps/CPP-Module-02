@@ -1,4 +1,5 @@
 #include "Fixed.h"
+#include <iostream>
 
 int main( void ) {
 	Fixed a;
