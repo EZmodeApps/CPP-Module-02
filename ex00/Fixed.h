@@ -10,7 +10,6 @@ public:
 	Fixed(int const n);
 	Fixed(Fixed const &src); //copy constructor
 	Fixed &operator= (const Fixed &src);
-	
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 
