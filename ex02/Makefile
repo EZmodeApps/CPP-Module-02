@@ -2,7 +2,7 @@ NAME	=	fixed
 
 SRCS	=	Fixed.cpp main.cpp
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	${SRCS:.cpp=.o}
 
 DEP 	=	$(OBJS:.o=.d)
 
@@ -14,8 +14,13 @@ $(NAME):	$(OBJS)
 	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(DEP)
+
+fclean:	clean
+	rm -f $(NAME)
 
 re:	clean all
 
 .PHONY:	all clean fclean re
+
+include $(wildcard $(DEP))
