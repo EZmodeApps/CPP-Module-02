@@ -1,18 +1,20 @@
-NAME	=	harl_2.0
+NAME	=	fixed
 
-SRCS	=	Harl.cpp main.cpp
+SRCS	=	Fixed.cpp main.cpp
 
 OBJS	=	${SRCS:.c=.o}
 
-FLAGS	=	-Wall -Wextra -Werror
+DEP 	=	$(OBJS:.o=.d)
+
+FLAGS	=	-Wall -Wextra -Werror -MMD -I.
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	c++ $(FLAGS) $(SRCS) -I. -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -f $(NAME)
+	rm -f $(OBJS)
 
 re:	clean all
 
