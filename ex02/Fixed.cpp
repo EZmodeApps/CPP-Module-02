@@ -1,36 +1,36 @@
 #include "Fixed.h"
 
 Fixed::Fixed(): value(0) {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int raw):  value(raw << bits) {
-	std::cout << "Int constructor called" << std:: endl;
+//	std::cout << "Int constructor called" << std:: endl;
 }
 
 Fixed::Fixed(const float raw)  {
-	std::cout << "Float constructor called" << std:: endl;
+//	std::cout << "Float constructor called" << std:: endl;
 	int pow = 1 << bits;
 	value = roundf(raw * pow);
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src) {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed &Fixed::operator = (const Fixed &src) {
-	std::cout << "Copy assigment operator called" << std::endl;
+//	std::cout << "Copy assigment operator called" << std::endl;
 	value = src.getRawBits();
 	return *this;
 }
 
 int Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called" << std::endl;
+//	std::cout << "getRawBits member function called" << std::endl;
 	return value;
 }
 
@@ -55,18 +55,23 @@ std::ostream &operator<<(std::ostream &out, const Fixed &f) { //out - cout
 bool Fixed::operator==(const Fixed &src) {
 	return (this->getRawBits() == src.getRawBits());
 }
+
 bool Fixed::operator!=(const Fixed &src) {
 	return (this->getRawBits() != src.getRawBits());
 }
+
 bool Fixed::operator>(const Fixed &src) {
 	return (this->getRawBits() > src.getRawBits());
 }
+
 bool Fixed::operator>=(const Fixed &src) {
 	return (this->getRawBits() >= src.getRawBits());
 }
+
 bool Fixed::operator<(const Fixed &src) {
 	return (this->getRawBits() < src.getRawBits());
 }
+
 bool Fixed::operator<=(const Fixed &src) {
 	return (this->getRawBits() <= src.getRawBits());
 }
@@ -98,7 +103,7 @@ Fixed &Fixed::operator++() {
 
 Fixed Fixed::operator++(int) {
 	Fixed result(*this);
-	result.value++;
+	value++;
 	return result;
 }
 
